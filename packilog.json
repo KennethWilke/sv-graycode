@@ -1,0 +1,13 @@
+{
+    "files":
+    [
+        "binary_to_gray.sv",
+        "gray_to_binary.sv"
+    ],
+    "tests": 
+    [
+        "test_4bit_decode",
+        "test_4bit_encode"
+    ]
+}
+
