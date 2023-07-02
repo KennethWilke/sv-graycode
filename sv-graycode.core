@@ -1,0 +1,27 @@
+CAPI=2:
+name: kwilke:simple:sv-graycode:1.0.0
+description: Binary/Gray code converters
+
+filesets:
+  rtl:
+    files:
+      - binary_to_gray.sv
+      - gray_to_binary.sv
+    file_type: systemVerilogSource
+  tb:
+    files:
+      - testbench.sv
+    file_type: systemVerilogSource
+
+targets:
+  default: &default
+    filesets:
+      - rtl
+  sim:
+    <<: *default
+    default_tool: icarus
+    filesets_append: ["tb"]
+    toplevel: testbench
+    tools:
+      icarus:
+        iverilog_options: ["-g2012"]
